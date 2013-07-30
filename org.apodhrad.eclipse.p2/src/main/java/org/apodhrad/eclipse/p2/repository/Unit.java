@@ -1,24 +1,19 @@
-package org.apodhrad.eclipse.p2;
+package org.apodhrad.eclipse.p2.repository;
 
 import java.util.Properties;
 
-public class Artifact {
+public class Unit {
 
 	private Properties properties;
 
-	public Artifact(String id, String classifier, String version) {
+	public Unit(String id, String version) {
 		properties = new Properties();
 		properties.put("id", id);
-		properties.put("classifier", classifier);
 		properties.put("version", version);
 	}
 
 	public String getId() {
 		return getProperty("id");
-	}
-
-	public String getClassifier() {
-		return getProperty("classifier");
 	}
 
 	public String getVersion() {
@@ -39,7 +34,7 @@ public class Artifact {
 
 	@Override
 	public String toString() {
-		return getId() + "-" + getVersion() + " [" + getClassifier() + "]";
+		return getId() + "-" + getVersion();
 	}
 
 }

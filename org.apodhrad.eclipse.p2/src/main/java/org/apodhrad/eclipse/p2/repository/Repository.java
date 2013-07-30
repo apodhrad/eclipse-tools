@@ -1,4 +1,4 @@
-package org.apodhrad.eclipse.p2;
+package org.apodhrad.eclipse.p2.repository;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -20,7 +20,7 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.xml.sax.SAXException;
 
-public class P2Parser {
+public class Repository {
 
 	public static final BaseMatcher ALL = new BaseMatcher() {
 		public boolean matches(Object obj) {
@@ -44,7 +44,7 @@ public class P2Parser {
 	private List<Rule> rules;
 	private List<Artifact> artifacts;
 
-	public P2Parser(String repoUrl) throws IOException {
+	public Repository(String repoUrl) throws IOException {
 		this.repoUrl = repoUrl;
 		try {
 			parseArtifacts(getInputStream(repoUrl, "artifacts"));

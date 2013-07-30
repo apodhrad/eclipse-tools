@@ -1,4 +1,4 @@
-package org.apodhrad.eclipse.p2;
+package org.apodhrad.eclipse.p2.repository;
 
 public interface BaseMatcher {
 
