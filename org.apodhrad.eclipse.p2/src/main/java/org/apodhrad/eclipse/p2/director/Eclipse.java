@@ -12,7 +12,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-
 /**
  * 
  * @author apodhrad
@@ -93,7 +92,7 @@ public class Eclipse {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
+
 		List<String> command = new ArrayList<String>();
 		command.add("-application");
 		command.add("org.eclipse.swtbot.eclipse.junit.headless.swtbottestapplication");
@@ -107,21 +106,22 @@ public class Eclipse {
 		command.add(className);
 		command.add("-data");
 		command.add(target + "/workspace");
-		command.add("formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter," + target + "/" + className + ".xml");
+		command.add("formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,"
+				+ target + "/" + className + ".xml");
 		command.add("formatter=org.apache.tools.ant.taskdefs.optional.junit.PlainJUnitResultFormatter");
 		command.add("-consoleLog");
 		command.add("-nosplash");
 		command.add("-noExit");
-		if(securityFile.exists()) {
+		if (securityFile.exists()) {
 			command.add("-eclipse.password");
 			command.add(securityFile.getAbsolutePath());
 		}
 		command.add("-vmargs");
 		command.add("-Dusage_reporting_enabled=false");
-		
+
 		execute(command);
 	}
-	
+
 	public void execute(List<String> command) {
 		execute(command.toArray(new String[command.size()]));
 	}
@@ -191,4 +191,9 @@ public class Eclipse {
 		}
 		return sb.substring(1);
 	}
+
+	public File getJarFile() {
+		return jarFile;
+	}
+
 }

@@ -45,6 +45,7 @@
 
   <modules>
     <module>org.apodhrad.eclipse.p2</module>
+    <module>eclipse-surefire-plugin</module>
   </modules>
 
 </project>
